@@ -2,7 +2,16 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public float attackRange;
+    public EnemyStats stats;
+    public virtual void Movement()
+    {
+        
+    }
+    public virtual void Attack()
+    {
+        
+    }
     void Start()
     {
         
@@ -11,6 +20,6 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Movement();
     }
 }

@@ -1,8 +1,35 @@
 using UnityEngine;
 
+public enum EnemyStat
+{
+    MaxHealth,
+    CurrentHealth,
+    MoveSpeed,
+    Damage,
+    Defense,
+    AttackSpeed
+}
+
+public class EnemyStatHolder
+{
+    public EnemyStat stat;
+    public float value;
+}
+
 public class EnemyStats : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public EnemyStatHolder[] stats;
+    public float GetStatValue(EnemyStat stat)
+    {
+        foreach (EnemyStatHolder holder in stats)
+        {
+            if (holder.stat == stat)
+            {
+                return holder.value;
+            }
+        }
+        return 0f;
+    }
     void Start()
     {
         
